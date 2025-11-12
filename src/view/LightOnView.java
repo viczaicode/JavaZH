@@ -4,7 +4,9 @@
  */
 package view;
 
+import java.awt.Panel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -15,8 +17,67 @@ public class LightOnView extends javax.swing.JFrame {
     /**
      * Creates new form LightOnView
      */
+    
+    private JPanel[] elemek = new JPanel[9];
+    
     public LightOnView() {
         initComponents();
+        listaFeltolt();
+    }
+    
+    private void listaFeltolt() {
+        
+        elemek[0] = getElem1();
+        elemek[1] = getElem2();
+        elemek[2] = getElem3();
+        elemek[3] = getElem4();
+        elemek[4] = getElem5();
+        elemek[5] = getElem6();
+        elemek[6] = getElem7();
+        elemek[7] = getElem8();
+        elemek[8] = getElem9();
+        
+        
+    }
+
+    public JPanel getElem1() {
+        return elem1;
+    }
+
+    public JPanel getElem2() {
+        return elem2;
+    }
+
+    public JPanel getElem3() {
+        return elem3;
+    }
+
+    public JPanel getElem4() {
+        return elem4;
+    }
+
+    public JPanel getElem5() {
+        return elem5;
+    }
+
+    public JPanel getElem6() {
+        return elem6;
+    }
+
+    public JPanel getElem7() {
+        return elem7;
+    }
+
+    public JPanel getElem8() {
+        return elem8;
+    }
+
+    public JPanel getElem9() {
+        return elem9;
+    }
+
+    public JPanel[] getElemek() {
+        return this.elemek;
     }
 
     /**

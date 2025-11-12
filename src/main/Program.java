@@ -4,6 +4,7 @@
  */
 package main;
 
+import controller.LightOnController;
 import view.LightOnView;
 
 /**
@@ -21,6 +22,8 @@ public class Program {
                 new LightOnView().setVisible(true);
             }
         });
+        
+        new LightOnController();
     }
     
 }
