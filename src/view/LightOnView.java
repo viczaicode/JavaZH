@@ -4,6 +4,7 @@
  */
 package view;
 
+import controller.LightOnController;
 import java.awt.Panel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -17,12 +18,16 @@ public class LightOnView extends javax.swing.JFrame {
     /**
      * Creates new form LightOnView
      */
-    
+    private LightOnController controller;
     private JPanel[] elemek = new JPanel[9];
     
     public LightOnView() {
         initComponents();
         listaFeltolt();
+    }
+    
+    public void setController(LightOnController controller) {
+        this.controller = controller;
     }
     
     private void listaFeltolt() {
@@ -79,6 +84,10 @@ public class LightOnView extends javax.swing.JFrame {
     public JPanel[] getElemek() {
         return this.elemek;
     }
+    
+    public javax.swing.JTextField getjTextField1() {
+        return jTextField1;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -107,8 +116,10 @@ public class LightOnView extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        MENUrules = new javax.swing.JMenuItem();
+        MENUsave = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        MENUexit = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Light On");
@@ -358,21 +369,32 @@ public class LightOnView extends javax.swing.JFrame {
 
         jMenu1.setText("File");
 
-        jMenuItem1.setText("Játékleírás");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        MENUrules.setText("Játékleírás");
+        MENUrules.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                MENUrulesActionPerformed(evt);
             }
         });
+        jMenu1.add(MENUrules);
+
+        MENUsave.setText("Mentés");
+        MENUsave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MENUsaveActionPerformed(evt);
+            }
+        });
+        jMenu1.add(MENUsave);
+
+        jMenuItem1.setText("Betöltés");
         jMenu1.add(jMenuItem1);
 
-        jMenuItem2.setText("Kilépés");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        MENUexit.setText("Kilépés");
+        MENUexit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                MENUexitActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        jMenu1.add(MENUexit);
 
         jMenuBar1.add(jMenu1);
 
@@ -408,17 +430,19 @@ public class LightOnView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+        if (controller != null) {
+            controller.ujJatek();
+        }
+    }
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void MENUexitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MENUexitActionPerformed
         int valasz = JOptionPane.showConfirmDialog(rootPane, "Biztosan ki akarsz lépni?", "Kilépés", WIDTH);
         if (valasz == 0) {
             System.exit(0);
         }
         
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_MENUexitActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         int valasz = JOptionPane.showConfirmDialog(rootPane, "Biztosan ki akarsz lépni?", "Kilépés", WIDTH);
@@ -427,12 +451,19 @@ public class LightOnView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_formWindowClosing
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void MENUrulesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MENUrulesActionPerformed
         JOptionPane.showMessageDialog(rootPane, "Kapcsold le a lámpákat!");
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_MENUrulesActionPerformed
+
+    private void MENUsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MENUsaveActionPerformed
+        
+    }//GEN-LAST:event_MENUsaveActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem MENUexit;
+    private javax.swing.JMenuItem MENUrules;
+    private javax.swing.JMenuItem MENUsave;
     private javax.swing.JPanel elem1;
     private javax.swing.JPanel elem2;
     private javax.swing.JPanel elem3;
@@ -448,7 +479,6 @@ public class LightOnView extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;

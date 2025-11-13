@@ -19,11 +19,12 @@ public class Program {
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LightOnView().setVisible(true);
+                LightOnView view = new LightOnView();
+                LightOnController controller = new LightOnController(view);
+                view.setController(controller);
+                view.setVisible(true);
             }
         });
-        
-        new LightOnController();
     }
     
 }
