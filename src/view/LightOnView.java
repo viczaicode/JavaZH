@@ -153,6 +153,7 @@ public class LightOnView extends javax.swing.JFrame {
 
         jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder("Játéktér"));
 
+        elem5.setBackground(new java.awt.Color(0, 0, 0));
         elem5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         elem5.setPreferredSize(new java.awt.Dimension(65, 65));
 
@@ -167,6 +168,7 @@ public class LightOnView extends javax.swing.JFrame {
             .addGap(0, 63, Short.MAX_VALUE)
         );
 
+        elem7.setBackground(new java.awt.Color(0, 0, 0));
         elem7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         elem7.setPreferredSize(new java.awt.Dimension(65, 65));
 
@@ -181,6 +183,7 @@ public class LightOnView extends javax.swing.JFrame {
             .addGap(0, 63, Short.MAX_VALUE)
         );
 
+        elem3.setBackground(new java.awt.Color(0, 0, 0));
         elem3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         elem3.setPreferredSize(new java.awt.Dimension(65, 65));
 
@@ -195,6 +198,7 @@ public class LightOnView extends javax.swing.JFrame {
             .addGap(0, 63, Short.MAX_VALUE)
         );
 
+        elem8.setBackground(new java.awt.Color(0, 0, 0));
         elem8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         elem8.setPreferredSize(new java.awt.Dimension(65, 65));
 
@@ -209,6 +213,7 @@ public class LightOnView extends javax.swing.JFrame {
             .addGap(0, 63, Short.MAX_VALUE)
         );
 
+        elem1.setBackground(new java.awt.Color(0, 0, 0));
         elem1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         elem1.setPreferredSize(new java.awt.Dimension(65, 65));
 
@@ -223,6 +228,7 @@ public class LightOnView extends javax.swing.JFrame {
             .addGap(0, 63, Short.MAX_VALUE)
         );
 
+        elem6.setBackground(new java.awt.Color(0, 0, 0));
         elem6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         elem6.setPreferredSize(new java.awt.Dimension(65, 65));
 
@@ -237,6 +243,7 @@ public class LightOnView extends javax.swing.JFrame {
             .addGap(0, 63, Short.MAX_VALUE)
         );
 
+        elem2.setBackground(new java.awt.Color(0, 0, 0));
         elem2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         elem2.setPreferredSize(new java.awt.Dimension(65, 65));
 
@@ -251,6 +258,7 @@ public class LightOnView extends javax.swing.JFrame {
             .addGap(0, 63, Short.MAX_VALUE)
         );
 
+        elem9.setBackground(new java.awt.Color(0, 0, 0));
         elem9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         elem9.setPreferredSize(new java.awt.Dimension(65, 65));
 
@@ -265,6 +273,7 @@ public class LightOnView extends javax.swing.JFrame {
             .addGap(0, 63, Short.MAX_VALUE)
         );
 
+        elem4.setBackground(new java.awt.Color(0, 0, 0));
         elem4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         elem4.setPreferredSize(new java.awt.Dimension(65, 65));
 
