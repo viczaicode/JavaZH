@@ -2,7 +2,10 @@
 package controller;
 
 import java.awt.Color;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import model.LighOnModel;
 import view.LightOnView;
@@ -26,6 +29,10 @@ public class LightOnController {
         }
         peldanyosit();
         CounterFrissit();
+    }
+
+    public LighOnModel[] getLampak() {
+        return this.lampak;
     }
     
     public void peldanyosit() {
@@ -70,6 +77,18 @@ public class LightOnController {
             } else {
                 lampak[index].setAllapot(1);
                 view.getElemek()[index].setBackground(Color.YELLOW);  
+            }
+        
+    }
+    
+    private void szinBeallit(int index) {
+        
+        if (lampak[index].getAllapot() == 1) {
+                lampak[index].setAllapot(1);
+                view.getElemek()[index].setBackground(Color.YELLOW);
+            } else {
+                lampak[index].setAllapot(0);
+                view.getElemek()[index].setBackground(Color.BLACK);  
             }
         
     }
@@ -193,6 +212,42 @@ public class LightOnController {
             
             
             CounterFrissit();
+    }
+    
+    
+    public void mentes() {
+        try (FileWriter fw = new FileWriter("allapotok.txt")) {
+            for (LighOnModel lampa : lampak) {
+            fw.write(lampa.getAllapot() + "\n");
+            }
+        JOptionPane.showMessageDialog(view, "Mentés kész!");
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(view, "Mentés sikertelen: " + ex.getMessage());
         }
+    }
+    
+    
+    public void betoltes() {
+        try (java.util.Scanner sc = new java.util.Scanner(new java.io.File("allapotok.txt"))) {
+            int i = 0;
+            while (sc.hasNextLine() && i < lampak.length) {
+                String sor = sc.nextLine();
+                int allapot = Integer.parseInt(sor.trim());
+                lampak[i].setAllapot(allapot);
+                szinBeallit(i);
+                i++;
+            }
+            CounterFrissit();
+            JOptionPane.showMessageDialog(view, "Betöltés kész!");
+        } catch (java.io.FileNotFoundException ex) {
+        JOptionPane.showMessageDialog(view, "Nincs mentett fájl!");
+        } catch (Exception ex) {
+        JOptionPane.showMessageDialog(view, "Hiba a betöltés során: " + ex.getMessage());
+        }
+    }
+    
+    
+    
+    
 }
     

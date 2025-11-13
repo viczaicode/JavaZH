@@ -6,6 +6,10 @@ package view;
 
 import controller.LightOnController;
 import java.awt.Panel;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -395,6 +399,11 @@ public class LightOnView extends javax.swing.JFrame {
         jMenu1.add(MENUsave);
 
         jMenuItem1.setText("Betöltés");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         MENUexit.setText("Kilépés");
@@ -465,8 +474,12 @@ public class LightOnView extends javax.swing.JFrame {
     }//GEN-LAST:event_MENUrulesActionPerformed
 
     private void MENUsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MENUsaveActionPerformed
-        
+        controller.mentes();
     }//GEN-LAST:event_MENUsaveActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        controller.betoltes();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
